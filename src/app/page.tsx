@@ -6,10 +6,24 @@ import WhyChooseUs from "@/components/sections/WhyChooseUs";
 import ResultsHighlight from "@/components/sections/ResultsHighlight";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import FaqSection from "@/components/sections/FaqSection";
+import JsonLd from "@/components/JsonLd";
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    { "@type": "Question", name: "What classes do you offer coaching for?", acceptedAnswer: { "@type": "Answer", text: "We offer coaching for Class 8, SSC (Class 9–10), and HSC (Class 11–12) students across Science, Commerce, and Humanities groups under the NCTB national curriculum." } },
+    { "@type": "Question", name: "How large are the batches?", acceptedAnswer: { "@type": "Answer", text: "We keep a maximum of 25 students per batch to ensure every student gets personal attention from the teacher." } },
+    { "@type": "Question", name: "Can I attend a demo class before enrolling?", acceptedAnswer: { "@type": "Answer", text: "Absolutely! We offer free demo classes so students and parents can experience our teaching style before making a commitment." } },
+    { "@type": "Question", name: "What are the class fees?", acceptedAnswer: { "@type": "Answer", text: "Fees vary by level and group. Please visit our Courses page for detailed fee information, or contact us for a personalised quote." } },
+    { "@type": "Question", name: "Do you provide study materials?", acceptedAnswer: { "@type": "Answer", text: "Yes — all enrolled students receive structured notes, worksheets, and question banks aligned with the NCTB syllabus and board exam patterns." } },
+  ],
+};
 
 export default function Home() {
   return (
     <>
+      <JsonLd data={faqJsonLd} />
       <AnnouncementBar />
 
       {/* Hero */}
